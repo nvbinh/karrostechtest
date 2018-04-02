@@ -6,6 +6,8 @@ import { connect } from "react-redux";
 import { mapDispachToProps } from "./redux/Store";
 
 import Section from "@utils/Section";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 import "../css/global.pcss";
 

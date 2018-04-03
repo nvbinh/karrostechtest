@@ -23,24 +23,21 @@ class Header extends React.Component {
     render() {
         return (
             <div>
+              <SearchBox collapsed={this.state.toggleSearchBox} toggleSearchBox={this.toggleSearchBox} />
               <div className={Styles.header}>
                 <div className={Styles.navigation}>
-                  <button className={`${Styles.button} material-icons`} onClick={this.props.history.goBack}>arrow_back</button>
+                  <a className={Styles.logo} href="/">THEMOVIEBOX</a>
+                  <button className={`${Styles.button} material-icons`} onClick={this.toggleSearchBox}>search</button>
                   <ul className={Styles.menu}>
                     <li className={Styles.menuitem}>
-                      <NavLink exact className={Styles.menulink} activeClassName={Styles.active} to="/">Latest</NavLink>
+                      <NavLink exact className={Styles.menulink} activeClassName={Styles.active} to="/">Login</NavLink>
                     </li>
                     <li className={Styles.menuitem}>
-                      <NavLink className={Styles.menulink} activeClassName={Styles.active} to="/genres">Genres</NavLink>
-                    </li>
-                    <li className={Styles.menuitem}>
-                      <NavLink className={Styles.menulink} activeClassName={Styles.active} to="/about">About</NavLink>
+                      <NavLink className={Styles.menulink} activeClassName={Styles.active} to="/genres">Sign up</NavLink>
                     </li>
                   </ul>
-                  <button className={`${Styles.button} material-icons`} onClick={this.toggleSearchBox}>search</button>
                 </div>
               </div>
-              <SearchBox collapsed={this.state.toggleSearchBox} toggleSearchBox={this.toggleSearchBox} />
             </div>
         );
     }

@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import Slider from "react-slick";
 
 import Container from "@utils/Container";
+import MovieImage from "../MovieImage";
 import Styles from "./Carousel.pcss";
 import "../../../css/slick.pcss";
 
@@ -24,7 +25,8 @@ const Carousel = ({
   movies,
   config: {
     images: { backdrop_sizes: imageSizes, secure_base_url: imageBaseUrl }
-  }
+  },
+  genres
 }) => {
   const sliderSettings = {
     className: Styles.container,
@@ -39,11 +41,15 @@ const Carousel = ({
     prevArrow: <CarouselPrevArrow />
   };
 
+  console.log("genres");
+  console.log(genres);
+
   const slides = movies.map(movie => (
     <div className={Styles.hero} key={movie.id}>
       <Container>
         <div className={Styles.info}>
           <h2 className={Styles.title}>{movie.title}</h2>
+          <p>{movie.genre_ids}</p>
           <p className={Styles.overview}>
             {`${movie.overview.substr(0, 150)}...`}
           </p>
@@ -52,6 +58,12 @@ const Carousel = ({
           </Link>
         </div>
       </Container>
+      <MovieImage
+        backdrop
+        size={imageSizes[3]}
+        imageBaseUrl={imageBaseUrl}
+        path={movie.backdrop_path}
+      />
     </div>
   ));
 
@@ -60,6 +72,7 @@ const Carousel = ({
 
 Carousel.propTypes = {
   movies: PropTypes.array,
+  genres: PropTypes.array,
   config: PropTypes.shape({
     images: PropTypes.shape({
       backdrop_sizes: PropTypes.array,
@@ -69,7 +82,7 @@ Carousel.propTypes = {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  return { ...ownProps, config: state.config };
+  return { ...ownProps, config: state.config, genres: state.genres };
 };
 
 export default connect(mapStateToProps)(Carousel);

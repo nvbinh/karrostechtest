@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import {syncHistoryWithStore, routerReducer} from "react-router-redux";
 import {BrowserHistory} from "react-router";
 import {bindActionCreators} from "redux";
-import {DefaultState} from "./DefaultState";
+import DefaultState from "./DefaultState";
 import * as actionCreators from "./Actions";
 import * as reducers from "./Reducers";
 

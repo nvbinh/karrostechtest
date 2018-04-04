@@ -22,6 +22,7 @@ class App extends React.Component {
 
 	componentWillMount() {
 		this.props.getConfig();
+		this.props.getGenres();
 	}
 
 	render() {

@@ -14,6 +14,7 @@ class Front extends React.Component {
   }
 
   render() {
+    console.log(this.props.latestMovies);
     return (
       <div className="page">
         <Carousel movies={this.props.latestMovies.slice(0, 3)} />

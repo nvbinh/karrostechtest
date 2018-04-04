@@ -20,7 +20,7 @@ export default {
           sort_by: "popularity.desc"
         }
       })
-      .then(res => { console.log(res.data); return res.data; })
+      .then(res => res.data)
       .catch(error => console.log(error)),
   
   getGenres: () =>

@@ -28,6 +28,7 @@
     "react-slick": "^0.21.0",
     "react-transition-group": "^2.2.1",
     "redux": "^3.6.0",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "scrollreveal": "^3.3.6",
     "throttle-debounce": "^1.0.1"

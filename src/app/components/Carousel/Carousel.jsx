@@ -21,6 +21,17 @@ const CarouselNextArrow = props => (
   </i>
 );
 
+const GetGenreNames = (allGenres, movieGenres) => {
+  let movieGenreNames = [];
+  allGenres.find((el, index) => {
+    if (movieGenres.includes(el.id)) {
+      movieGenreNames.push(el.name);
+    }
+  });
+
+  return movieGenreNames.length > 0 ? movieGenreNames.join(" ") : "";
+}
+
 const Carousel = ({
   movies,
   config: {
@@ -41,15 +52,12 @@ const Carousel = ({
     prevArrow: <CarouselPrevArrow />
   };
 
-  console.log("genres");
-  console.log(genres);
-
   const slides = movies.map(movie => (
     <div className={Styles.hero} key={movie.id}>
       <Container>
         <div className={Styles.info}>
           <h2 className={Styles.title}>{movie.title}</h2>
-          <p>{movie.genre_ids}</p>
+          <p>{GetGenreNames(genres, movie.genre_ids)}</p>
           <p className={Styles.overview}>
             {`${movie.overview.substr(0, 150)}...`}
           </p>
@@ -69,6 +77,9 @@ const Carousel = ({
 
   return slides.length > 0 && <Slider {...sliderSettings}>{slides}</Slider>;
 };
+
+console.log("genres");
+console.log(Carousel.genres);
 
 Carousel.propTypes = {
   movies: PropTypes.array,

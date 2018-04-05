@@ -3,6 +3,8 @@ import {connect} from "react-redux";
 import {mapDispachToProps} from "./redux/Store";
 import Container from "@utils/Container";
 import Carousel from "./components/Carousel";
+import MovieList from "./components/MovieList";
+import Header from "./components/Header";
 
 class Front extends React.Component {
   constructor() {
@@ -18,6 +20,9 @@ class Front extends React.Component {
     return (
       <div className="page">
         <Carousel movies={this.props.latestMovies.slice(0, 3)} />
+        <Container large="true">
+          <MovieList movies={this.props.latestMovies.slice(5)} />
+        </Container>
       </div>
     );
   }

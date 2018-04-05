@@ -5,6 +5,14 @@
   opacity: 1;
 }
 
+:global .slick-dots li.slick-active > button {
+  background-color: #dc4051;
+}
+
+:global .slick-dots li > button:hover {
+  background-color: #dc4051;
+}
+
 :global .slick-arrow {
   position: absolute;
   z-index: 999;
@@ -43,11 +51,11 @@
 :global .slick-dots li button {
   height: 12px;
   cursor: pointer;
-  width: 12px;
-  border-radius: 12px;
+  width: 35px;
+  border-radius: 3px;
   border: none;
   font-size: 0;
-  margin: 10px;
+  margin: 0 5px;
   background-color: white;
 }
 

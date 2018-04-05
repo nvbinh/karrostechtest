@@ -1,16 +1,17 @@
 @import "../../../css/variables.pcss";
 
 .header {
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 0;
-  background: var(--bgalt);
+  // background: var(--bgalt);
   z-index: 100;
 }
 
 .logo {
   color: color(white);
   text-decoration: none;
+  font-size: 22px;
 }
 
 .navigation {
@@ -18,6 +19,8 @@
   justify-content: space-between;
   line-height: 40px;
   font-size: 16px;
+  width: 90%;
+  margin: 0 auto;
 
   @media (--desktop) {
     font-size: 28px !important;
@@ -45,7 +48,7 @@
   transition: color 0.3s;
   position: relative;
   padding: 8px 12px;
-  font-size: 1rem;
+  font-size: 12px;
 
   @media (--desktop) {
     // padding-bottom: 9px;
@@ -82,10 +85,15 @@
   border: none;
   outline: none;
   color: #fff;
-  font-size: 20px;
+  font-size: 17px !important;
   margin-left: auto;
+  padding-top: 8px;
 
   @media (--desktop) {
     font-size: 28px;
   }
+}
+
+.button:hover {
+  color: #dc4051;
 }

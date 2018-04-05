@@ -14,10 +14,8 @@
 
 .title {
   font-size: 28px;
-
-  @media (--desktop) {
-    font-size: 60px;
-  }
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .overview {
@@ -29,9 +27,49 @@
   }
 }
 
+.watch {
+  background-color: #dc4051;
+  border: 1px solid #dc4051;
+}
+
+.view {
+  border: 1px solid #ffffff;
+}
+
+.wishlist {
+  border: 0;
+  padding: 0;
+}
+
+.genres {
+  font-size: 11px;
+  color: #dddddd;
+  font-weight: 300;
+  padding: 5px 0 27px 0
+}
+
+.duration {
+  margin-left: 10px;
+}
+
+.spacing {
+  word-spacing: 12px;
+  margin-right: 10px;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
 .link {
   font-size: 14px;
 	color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 3px;
+  margin-right: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
 
   @media (--desktop) {
     font-size: 18px;
@@ -43,15 +81,22 @@
   position: absolute;
   opacity: 0;
   bottom: 0;
-  padding: 1em;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 1em 2em 2em 2em;
   background: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
 
   @media (--desktop) {
-    padding: 2em;
-    width: 30em;
+    // padding: 2em 0;
     transform: translateX(-50px);
     transition: opacity 0.5s, transform 0.3s ease-in-out;
     transition-delay: 0.5s;
     bottom: 10%;
   }
+}
+
+.rating {
+  border: 1px solid #ff0000;
+  float: right;
 }

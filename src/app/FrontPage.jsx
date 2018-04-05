@@ -20,7 +20,7 @@ class Front extends React.Component {
     return (
       <div className="page">
         <Carousel movies={this.props.latestMovies.slice(0, 3)} />
-        <Container large="true">
+        <Container large={true}>
           <MovieList movies={this.props.latestMovies.slice(5)} />
         </Container>
       </div>

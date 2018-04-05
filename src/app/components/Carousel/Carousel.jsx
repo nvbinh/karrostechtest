@@ -44,10 +44,11 @@ const Carousel = ({
     dots: true,
     infinite: true,
     speed: 500,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
     nextArrow: <CarouselNextArrow />,
     prevArrow: <CarouselPrevArrow />
   };
@@ -57,13 +58,19 @@ const Carousel = ({
       <Container>
         <div className={Styles.info}>
           <h2 className={Styles.title}>{movie.title}</h2>
-          <p>{GetGenreNames(genres, movie.genre_ids)}</p>
-          <p className={Styles.overview}>
-            {`${movie.overview.substr(0, 150)}...`}
-          </p>
-          <Link className={Styles.link} to={`/movie/${movie.id}`}>
-            Read more
+          <p className={Styles.genres}><span className={Styles.spacing}>{GetGenreNames(genres, movie.genre_ids)}</span> | <span className={Styles.duration}>Duration: {movie.popularity}</span></p>
+          <Link className={[Styles.link, Styles.watch].join(' ')} to={`/watch/${movie.id}`}>
+            Watch Movie
           </Link>
+          <Link className={[Styles.link, Styles.view].join(' ')} to={`/view/${movie.id}`}>
+            View Info
+          </Link>
+          <Link className={[Styles.link, Styles.wishlist].join(' ')} to={`/view/${movie.id}`}>
+            + Add To Wishlist
+          </Link>
+          <div className={Styles.rating}>
+            Rating
+          </div>
         </div>
       </Container>
       <MovieImage

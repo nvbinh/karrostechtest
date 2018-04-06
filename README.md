@@ -1,4 +1,4 @@
-# karrostechtest
+# KarrosTech Test
 
 ### 1. Setup the project tasks
 `yarn install`

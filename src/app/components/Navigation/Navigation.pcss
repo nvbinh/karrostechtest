@@ -1,40 +1,10 @@
-.footer {
-  text-align: center;
-}
-
-.logo {
-  color: color(black);
-  text-decoration: none;
-  font-size: 22px;
-}
+@import "../../../css/variables.pcss";
 
 .navigation {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.navigationTop {
-  border-bottom: 1px solid #e2e2e2;
-  padding-bottom: 25px;
-  margin: 30px 0;
+  border-bottom: 1px solid #717171;
+  margin: 0 0 45px;
   display: flex;
   justify-content: space-between;
-}
-
-.navigationBottom {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 100px;
-}
-
-.navigationBottom i {
-  color: #a5a5a5;
-  cursor: pointer;
-  font-size: 30px;
-}
-
-.navigationBottom i:hover {
-  color: #dc4051;
 }
 
 .menu {
@@ -61,6 +31,7 @@
 
   &:hover {
     color: #dc4051;
+    border-bottom: 1px solid #dc5051;
   }
 }
 
@@ -71,4 +42,24 @@
 .active,
 .active:hover {
   color: #dc4051;
+  border-bottom: 1px solid #dc5051;
+}
+
+.views i {
+  font-size: 25px;
+  vertical-align: top;
+}
+
+.views i:hover {
+  color: #dc4051;
+  cursor: pointer;
+}
+
+.activeView {
+  color: #dc4051;
+}
+
+.views .activeView {
+  font-size: 31px;
+  margin-top: -3px;
 }

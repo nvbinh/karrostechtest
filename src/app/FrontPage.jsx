@@ -4,7 +4,8 @@ import {mapDispachToProps} from "./redux/Store";
 import Container from "@utils/Container";
 import Carousel from "./components/Carousel";
 import MovieList from "./components/MovieList";
-import Header from "./components/Header";
+import Navigation from "./components/Navigation";
+import Styles from "../css/layout.pcss";
 
 class Front extends React.Component {
   constructor() {
@@ -18,9 +19,10 @@ class Front extends React.Component {
   render() {
     console.log(this.props.latestMovies);
     return (
-      <div className="page">
+      <div className={Styles.page}>
         <Carousel movies={this.props.latestMovies.slice(0, 3)} />
         <Container large={true}>
+          <Navigation />
           <MovieList movies={this.props.latestMovies.slice(5)} />
         </Container>
       </div>

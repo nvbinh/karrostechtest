@@ -97,6 +97,52 @@
 }
 
 .rating {
-  border: 1px solid #ff0000;
+  border: 1px solid #717171;
   float: right;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: -50px;
+}
+
+.rating p {
+  margin: 0;
+}
+
+.ratingTitle {
+  font-size: 17px;
+}
+
+.ratingTitle span {
+  color: #dddddd;
+  font-size: 12px;
+}
+
+.ratingStars {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+.ratingStars > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  color: #dc4051;
+  font-size: 30px;
+}
+
+.ratingStars > span:hover:before,
+.ratingStars > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color: #dc4051;
+}
+
+.ratingStars > a {
+  text-decoration: none;
+  border: 1px solid #717171;
+  padding: 3px;
+  color: #fff;
+  margin-left: 10px;
+  top: -3px;
+  position: relative;
 }

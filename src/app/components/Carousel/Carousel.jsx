@@ -6,6 +6,7 @@ import Slider from "react-slick";
 
 import Container from "@utils/Container";
 import MovieImage from "../MovieImage";
+import GetGenreNames from "../../utils/Utils";
 import Styles from "./Carousel.pcss";
 import "../../../css/slick.pcss";
 
@@ -20,17 +21,6 @@ const CarouselNextArrow = props => (
     chevron_right
   </i>
 );
-
-const GetGenreNames = (allGenres, movieGenres) => {
-  let movieGenreNames = [];
-  allGenres.find((el, index) => {
-    if (movieGenres.includes(el.id)) {
-      movieGenreNames.push(el.name);
-    }
-  });
-
-  return movieGenreNames.length > 0 ? movieGenreNames.join(" ") : "";
-}
 
 const Carousel = ({
   movies,
@@ -58,7 +48,7 @@ const Carousel = ({
       <Container>
         <div className={Styles.info}>
           <h2 className={Styles.title}>{movie.title}</h2>
-          <p className={Styles.genres}><span className={Styles.spacing}>{GetGenreNames(genres, movie.genre_ids)}</span> | <span className={Styles.duration}>Duration: {movie.popularity}</span></p>
+          <p className={Styles.genres}><span className={Styles.spacing}>{GetGenreNames(genres, movie.genre_ids, " ")}</span> | <span className={Styles.duration}>Duration: {movie.popularity}</span></p>
           <Link className={[Styles.link, Styles.watch].join(' ')} to={`/watch/${movie.id}`}>
             Watch Movie
           </Link>
@@ -69,7 +59,15 @@ const Carousel = ({
             + Add To Wishlist
           </Link>
           <div className={Styles.rating}>
-            Rating
+            <p className={Styles.ratingTitle}>Rating <span>base on {movie.vote_count} reviews</span></p>
+            <p className={Styles.ratingStars}>
+              <a href="#">{movie.vote_average}</a>
+              <span>☆</span>
+              <span>☆</span>
+              <span>☆</span>
+              <span>☆</span>
+              <span>☆</span>
+            </p>
           </div>
         </div>
       </Container>
@@ -84,9 +82,6 @@ const Carousel = ({
 
   return slides.length > 0 && <Slider {...sliderSettings}>{slides}</Slider>;
 };
-
-console.log("genres");
-console.log(Carousel.genres);
 
 Carousel.propTypes = {
   movies: PropTypes.array,
